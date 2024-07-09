@@ -1,0 +1,17 @@
+module school {
+    struct Etudiant {
+        string matricule;
+        string nom;
+        string sexe;
+        string promotion;
+        string dateNaissance;
+    };
+
+    typedef sequence<Etudiant> EtudiantSeq;
+
+    interface GestionEtudiants {
+        void enregistrerEtudiant(in Etudiant e);
+        void modifierEtudiant(in string matricule, in string promotion, in string dateNaissance);
+        EtudiantSeq lireEtudiantsParPromotion(in string promotion);
+    };
+};
